@@ -7,6 +7,8 @@ import React from "react";
 import Header from "./Header";
 import Logo from "./Logo";
 import Card from "./Card";
+import Button from "./Button";
+import Counter from "./counter/Counter";
 
 let data = [
   {
@@ -48,22 +50,11 @@ let data = [
 ];
 
 const App = (props) => {
-  
-  const printCards = () => {
-    // const items =[];
-    // for (let index = 0; index < data.length; index++) {
-    //   items.push(<Card userData = {data[index]} />);
-    // }
-    // return items;
-    return data.map((item, index) => {
-      return (<Card userData={item} key ={index} />)
-    });
-  };
 
   return (
     <>
       <Header background="black">
-        <div>Billy's BBQ</div>
+        <Logo>Billy's BBQ</Logo>
         <nav>
           <a href="/">
             Link
@@ -73,11 +64,20 @@ const App = (props) => {
           <a href="/">Link</a>
         </nav>
       </Header>
-      <main style={{ margin: "20px auto", width: "100%", maxWidth: "960px" }}>
-        <div className="ui link cards">{printCards()}</div>
+      <main
+        style={{
+          margin: "0 auto",
+          width: "100%",
+          maxWidth: "960px",
+          padding: "20px 20px",
+        }}
+      >
+        <Counter/>
+        <Button>Save</Button>
+        {/* <div className="ui link cards">{printCards()}</div> */}
       </main>
     </>
   );
-}
+};
 
 export default App;
