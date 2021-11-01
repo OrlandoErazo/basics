@@ -1,6 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
 /* eslint-disable no-unused-vars */
-import { logDOM } from '@testing-library/dom';
 import React from 'react';
 
 const Logo = (props) => {

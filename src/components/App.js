@@ -9,6 +9,7 @@ import Logo from "./Logo";
 import Card from "./Card";
 import Button from "./Button";
 import Counter from "./counter/Counter";
+import Form from "./form/Form";
 
 let data = [
   {
@@ -72,8 +73,9 @@ const App = (props) => {
           padding: "20px 20px",
         }}
       >
-        <Counter/>
-        <Button>Save</Button>
+        <Form/>
+        {/* <Counter/>
+        <Button>Save</Button> */}
         {/* <div className="ui link cards">{printCards()}</div> */}
       </main>
     </>
