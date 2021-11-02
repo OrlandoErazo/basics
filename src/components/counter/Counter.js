@@ -10,7 +10,7 @@ const Counter = (props) => {
   // const setPoints = useState[1];
   const [goal, setGoal] = useState(11);
   useEffect(() => {
-    console.log("Run Every Single Time Ther's a Re-render or Any Data Changes ");
+    console.log("Run Every Single Time There's a Re-render or Any Data Changes ");
     console.log("A");
   });
   useEffect(() => {

@@ -7,8 +7,8 @@ import React from "react";
 import Header from "./Header";
 import Logo from "./Logo";
 import Card from "./Card";
-import Button from "./Button";
-import Counter from "./counter/Counter";
+import Button from "./counterClass/ButtonClass";
+import Counter from "./counterClass/CounterClass";
 import Form from "./form/Form";
 
 let data = [
@@ -72,8 +72,8 @@ const App = (props) => {
           maxWidth: "960px",
           padding: "20px 20px",
         }}
-      >
-        <Form/>
+      ><Counter/>
+        {/* <Form/> */}
         {/* <Counter/>
         <Button>Save</Button> */}
         {/* <div className="ui link cards">{printCards()}</div> */}
