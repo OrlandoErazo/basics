@@ -10,6 +10,13 @@ import Card from "./Card";
 import Button from "./counterClass/ButtonClass";
 import Counter from "./counterClass/CounterClass";
 import Form from "./form/Form";
+import {
+  GlobalStateProvider,
+  StateContext,
+  stateContext,
+} from "./context/ClassProvider";
+import A from "./context/A";
+import B from "./context/B";
 
 let data = [
   {
@@ -50,35 +57,52 @@ let data = [
   },
 ];
 
-const App = (props) => {
-
+const App = (props) => {  
   return (
-    <>
-      <Header background="black">
-        <Logo>Billy's BBQ</Logo>
-        <nav>
-          <a href="/">
-            Link
-            <span style={{ color: "red" }}>?</span>
-          </a>
-          <a href="/">Link</a>
-          <a href="/">Link</a>
-        </nav>
-      </Header>
-      <main
-        style={{
-          margin: "0 auto",
-          width: "100%",
-          maxWidth: "960px",
-          padding: "20px 20px",
-        }}
-      ><Counter/>
-        {/* <Form/> */}
-        {/* <Counter/>
+    <GlobalStateProvider>
+      <StateContext.Consumer>
+        {(context) => {
+
+          console.log(context);
+          return(          
+          <>
+            <Header data={props.data} background="black">
+              <Logo>Billy's BBQ</Logo>
+              <nav>
+                <a href="/">
+                  Link
+                  <span style={{ color: "red" }}>?</span>
+                </a>
+                <a href="/">Link</a>
+                <a href="/">Link</a>
+              </nav>
+            </Header>
+            <main
+              style={{
+                margin: "0 auto",
+                width: "100%",
+                maxWidth: "960px",
+                padding: "20px 20px",
+              }}
+            >
+              <input type="text" value = {context.state.name} onChange={context.handleChange} />
+              <h1>name: {context.state.name}</h1>
+              <A>
+                <B> </B>
+              </A>
+              <ignore>
+                {/* <Counter/> */}
+                {/* <Form/> */}
+                {/* <Counter/>
         <Button>Save</Button> */}
-        {/* <div className="ui link cards">{printCards()}</div> */}
-      </main>
-    </>
+                {/* <div className="ui link cards">{printCards()}</div> */}
+              </ignore>
+            </main>
+          </>
+        )}
+        }
+      </StateContext.Consumer>
+    </GlobalStateProvider>
   );
 };
 
